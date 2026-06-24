@@ -5,6 +5,7 @@ import 'package:movie_stream_app/features/navigation/presentation/bloc/navigatio
 import 'package:movie_stream_app/features/navigation/presentation/bloc/navigation_event.dart';
 import 'package:movie_stream_app/features/navigation/presentation/bloc/navigation_state.dart';
 import 'package:movie_stream_app/features/explore/presentation/pages/explore_page.dart';
+import 'package:movie_stream_app/features/profile/presentation/pages/profile_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -24,9 +25,9 @@ class _MainPageState extends State<MainPage> {
             children: [
               const HomePage(),
               const ExplorePage(),
-              const _WatchlistPage(),
-              const _DownloadsPage(),
-              const _ProfilePage(),
+              Container(),
+              Container(),
+              const ProfilePage(),
             ],
           ),
 
@@ -67,54 +68,6 @@ class _MainPageState extends State<MainPage> {
           ),
         );
       },
-    );
-  }
-}
-
-class _WatchlistPage extends StatelessWidget {
-  const _WatchlistPage();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'Watchlist',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-  }
-}
-
-class _DownloadsPage extends StatelessWidget {
-  const _DownloadsPage();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'Downloads',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-  }
-}
-
-class _ProfilePage extends StatelessWidget {
-  const _ProfilePage();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'Profile',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-      ),
     );
   }
 }

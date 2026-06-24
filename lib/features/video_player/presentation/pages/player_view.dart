@@ -129,7 +129,7 @@ class _PlayerViewState extends State<PlayerView> {
                     right: 0,
                     child: SafeArea(
                       child: Container(
-                        color: Colors.black.withOpacity(0.35),
+                        color: Colors.black.withValues(alpha: 0.35),
                         padding: const EdgeInsets.symmetric(
                           horizontal: 16,
                           vertical: 12,
@@ -169,7 +169,7 @@ class _PlayerViewState extends State<PlayerView> {
                     right: 0,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.72),
+                        color: Colors.black.withValues(alpha: 0.72),
                         borderRadius: const BorderRadius.vertical(
                           top: Radius.circular(24),
                         ),
