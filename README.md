@@ -1,17 +1,116 @@
-# video_player
+# 🎬 Movie App
 
-A new Flutter project.
+A modern Flutter Movie Application built with Clean Architecture principles, featuring a beautiful cinematic UI, scalable code structure, and smooth user experience.
 
-## Getting Started
+## ✨ Features
 
-This project is a starting point for a Flutter application.
+- 🔥 Modern Movie Streaming UI
+- 🎥 Browse Trending & Popular Movies
+- 🔍 Powerful Movie Search
+- ❤️ Watchlist Management
+- 📥 Downloads Section
+- 👤 User Profile & Settings
+- 🎬 Movie Details & demo video
+- 🌙 Dark Theme Design
+- 📱 Fully Responsive Layout
 
-A few resources to get you started if this is your first Flutter project:
+## 🏗 Architecture
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+This project follows **Clean Architecture** and **Feature-First Structure**.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Layers
+
+- Presentation
+- Domain
+- Data
+
+### State Management
+
+- BLoC Pattern
+
+### Dependency Injection
+
+- GetIt
+- Injectable
+
+### Navigation
+
+- GoRouter
+
+## 🛠 Tech Stack
+
+- Flutter
+- Dart
+- BLoC
+- GetIt
+- Injectable
+- GoRouter
+- Equatable
+- SharedPreferences
+- Talker
+
+## 📂 Project Structure
+
+```text
+lib/
+├── core/
+├── features/
+│   ├── auth/
+│   ├── home/
+│   ├── search/
+│   ├── movie_details/
+│   ├── watchlist/
+│   └── profile/
+├── injection/
+└── main.dart
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Flutter SDK
+- Dart SDK
+- Android Studio / VS Code
+
+### Installation
+
+```bash
+git clone https://github.com/yourusername/movie_app.git
+
+cd movie_app
+
+flutter pub get
+
+flutter run
+```
+
+## 📸 Screenshots
+
+Add your application screenshots here.
+
+| Home | Details | Profile |
+|------|---------|---------|
+| Screenshot | Screenshot | Screenshot |
+
+## 🎨 UI Design
+
+The application uses a modern cinematic design with:
+
+- Dark background
+- Red accent colors
+- Smooth animations
+- Responsive layouts
+- Clean typography
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+Made with ❤️ using Flutter.
