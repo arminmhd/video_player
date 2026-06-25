@@ -19,9 +19,14 @@ class PlayerProgressBar extends StatelessWidget {
     return Column(
       children: [
         Slider(value: progress.clamp(0.0, 1.0), onChanged: onSeek),
+
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [Text(currentTime), Text(totalTime)],
+          children: [
+            Text(currentTime, style: Theme.of(context).textTheme.bodySmall),
+
+            Text(totalTime, style: Theme.of(context).textTheme.bodySmall),
+          ],
         ),
       ],
     );

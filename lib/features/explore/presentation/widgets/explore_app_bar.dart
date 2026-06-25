@@ -11,7 +11,11 @@ class ExploreAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text('Explore', style: AppTextStyles.titleMedium),
-        IconButton(onPressed: onPressed, icon: Icon(Icons.search)),
+        IconButton(
+          onPressed: onPressed,
+          icon: const Icon(Icons.search),
+          tooltip: 'Search',
+        ),
       ],
     );
   }

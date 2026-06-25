@@ -38,3 +38,21 @@ class PlayerTicked extends PlayerEvent {
   @override
   List<Object?> get props => [position, isPlaying];
 }
+
+class PlayerPlaybackSpeedChanged extends PlayerEvent {
+  final double speed;
+
+  const PlayerPlaybackSpeedChanged(this.speed);
+
+  @override
+  List<Object?> get props => [speed];
+}
+
+class PlayerQualityChanged extends PlayerEvent {
+  final String quality;
+
+  const PlayerQualityChanged(this.quality);
+
+  @override
+  List<Object?> get props => [quality];
+}

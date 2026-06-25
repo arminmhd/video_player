@@ -17,10 +17,13 @@ class PlayerActionsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.zero,
       onTap: onTap,
       leading: Icon(icon),
       title: Text(title),
-      trailing: value != null ? Text(value!) : const Icon(Icons.chevron_right),
+      trailing: value != null
+          ? Text(value!, style: Theme.of(context).textTheme.bodyMedium)
+          : const Icon(Icons.chevron_right),
     );
   }
 }

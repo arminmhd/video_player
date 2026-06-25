@@ -8,6 +8,8 @@ class PlayerState extends Equatable {
   final Duration duration;
   final bool isPlaying;
   final double volume;
+  final double playbackSpeed;
+  final String quality;
   final String? message;
 
   const PlayerState({
@@ -16,6 +18,8 @@ class PlayerState extends Equatable {
     required this.duration,
     required this.isPlaying,
     required this.volume,
+    required this.playbackSpeed,
+    required this.quality,
     this.message,
   });
 
@@ -26,6 +30,8 @@ class PlayerState extends Equatable {
       duration: Duration.zero,
       isPlaying: false,
       volume: 1.0,
+      playbackSpeed: 1.0,
+      quality: 'Auto',
       message: null,
     );
   }
@@ -36,6 +42,8 @@ class PlayerState extends Equatable {
     Duration? duration,
     bool? isPlaying,
     double? volume,
+    double? playbackSpeed,
+    String? quality,
     String? message,
   }) {
     return PlayerState(
@@ -44,6 +52,8 @@ class PlayerState extends Equatable {
       duration: duration ?? this.duration,
       isPlaying: isPlaying ?? this.isPlaying,
       volume: volume ?? this.volume,
+      playbackSpeed: playbackSpeed ?? this.playbackSpeed,
+      quality: quality ?? this.quality,
       message: message ?? this.message,
     );
   }
@@ -55,6 +65,8 @@ class PlayerState extends Equatable {
     duration,
     isPlaying,
     volume,
+    playbackSpeed,
+    quality,
     message,
   ];
 }

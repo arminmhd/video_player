@@ -12,9 +12,6 @@ class PlayerVideo extends StatelessWidget {
       return const Center(child: CircularProgressIndicator());
     }
 
-    return AspectRatio(
-      aspectRatio: controller.value.aspectRatio,
-      child: VideoPlayer(controller),
-    );
+    return VideoPlayer(controller);
   }
 }

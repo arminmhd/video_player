@@ -6,6 +6,7 @@ import 'package:movie_stream_app/features/navigation/presentation/bloc/navigatio
 import 'package:movie_stream_app/features/navigation/presentation/bloc/navigation_state.dart';
 import 'package:movie_stream_app/features/explore/presentation/pages/explore_page.dart';
 import 'package:movie_stream_app/features/profile/presentation/pages/profile_page.dart';
+import 'package:movie_stream_app/features/search/presentation/pages/search_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -24,7 +25,7 @@ class _MainPageState extends State<MainPage> {
             index: state.currentIndex,
             children: [
               const HomePage(),
-              const ExplorePage(),
+              state.showSearch ? SearchPage() : ExplorePage(),
               Container(),
               Container(),
               const ProfilePage(),

@@ -4,14 +4,9 @@ import 'package:movie_stream_app/features/explore/presentation/pages/explore_vie
 import 'package:movie_stream_app/features/navigation/presentation/bloc/navigation_bloc.dart';
 import 'package:movie_stream_app/features/navigation/presentation/bloc/navigation_event.dart';
 
-class ExplorePage extends StatefulWidget {
+class ExplorePage extends StatelessWidget {
   const ExplorePage({super.key});
 
-  @override
-  State<ExplorePage> createState() => _ExplorePageState();
-}
-
-class _ExplorePageState extends State<ExplorePage> {
   @override
   Widget build(BuildContext context) {
     return ExploreView(

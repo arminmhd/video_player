@@ -14,6 +14,8 @@ class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {
     on<PlayerBackwardPressed>(_onBackward);
     on<PlayerVolumeChanged>(_onVolume);
     on<PlayerTicked>(_onTick);
+    on<PlayerPlaybackSpeedChanged>(_onPlaybackSpeed);
+    on<PlayerQualityChanged>(_onQualityChanged);
   }
 
   Future<void> _onInit(
@@ -29,14 +31,15 @@ class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {
 
       controller!.addListener(_listener);
 
+      await controller!.play();
+
       emit(
         state.copyWith(
           status: PlayerStatus.ready,
           duration: controller!.value.duration,
+          isPlaying: true,
         ),
       );
-
-      await controller!.play();
     } catch (e) {
       emit(state.copyWith(status: PlayerStatus.error, message: e.toString()));
     }
@@ -76,9 +79,11 @@ class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {
     PlayerForwardPressed event,
     Emitter<PlayerState> emit,
   ) async {
+    final duration = controller!.value.duration;
+
     final newPos = controller!.value.position + const Duration(seconds: 10);
 
-    await controller!.seekTo(newPos);
+    await controller!.seekTo(newPos > duration ? duration : newPos);
   }
 
   Future<void> _onBackward(
@@ -97,6 +102,24 @@ class PlayerBloc extends Bloc<PlayerEvent, PlayerState> {
     await controller!.setVolume(event.volume);
 
     emit(state.copyWith(volume: event.volume));
+  }
+
+  Future<void> _onPlaybackSpeed(
+    PlayerPlaybackSpeedChanged event,
+    Emitter<PlayerState> emit,
+  ) async {
+    if (controller == null) return;
+
+    await controller!.setPlaybackSpeed(event.speed);
+
+    emit(state.copyWith(playbackSpeed: event.speed));
+  }
+
+  Future<void> _onQualityChanged(
+    PlayerQualityChanged event,
+    Emitter<PlayerState> emit,
+  ) async {
+    emit(state.copyWith(quality: event.quality));
   }
 
   @override
