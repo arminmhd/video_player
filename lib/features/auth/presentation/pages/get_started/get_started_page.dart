@@ -15,9 +15,8 @@ class SplashPage extends StatelessWidget {
         if (state.status == AuthStatus.authenticated) {
           context.go(AppRoutes.main);
         }
-
         if (state.status == AuthStatus.unauthenticated) {
-          context.go(AppRoutes.splash);
+          context.go(AppRoutes.login);
         }
       },
       child: const Scaffold(body: Center(child: CircularProgressIndicator())),

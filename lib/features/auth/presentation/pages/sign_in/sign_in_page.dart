@@ -31,7 +31,7 @@ class _SignInPageState extends State<SignInPage> {
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state.status == AuthStatus.authenticated) {
-            context.go(AppRoutes.home);
+            context.go(AppRoutes.main);
           }
 
           if (state.status == AuthStatus.error) {

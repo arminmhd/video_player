@@ -10,10 +10,12 @@ import '../widgets/search_tv_shows_tab.dart';
 class SearchView extends StatefulWidget {
   final VoidCallback onBackPressed;
   final ValueChanged onValueChanged;
+  final void Function(int movieId) onMovieTap;
   const SearchView({
     super.key,
     required this.onBackPressed,
     required this.onValueChanged,
+    required this.onMovieTap,
   });
 
   @override
@@ -58,9 +60,9 @@ class _SearchViewState extends State<SearchView> {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      const SearchAllTab(),
-                      const SearchMoviesTab(),
-                      const SearchTvShowsTab(),
+                      SearchAllTab(onMovieTap: widget.onMovieTap),
+                      SearchMoviesTab(onMovieTap: widget.onMovieTap),
+                      SearchTvShowsTab(onMovieTap: widget.onMovieTap),
                     ],
                   ),
                 ),

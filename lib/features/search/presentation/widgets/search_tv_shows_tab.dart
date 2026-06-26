@@ -6,7 +6,8 @@ import 'package:movie_stream_app/features/search/presentation/bloc/search_bloc.d
 import 'package:movie_stream_app/features/search/presentation/bloc/search_state.dart';
 
 class SearchTvShowsTab extends StatelessWidget {
-  const SearchTvShowsTab({super.key});
+  final void Function(int movieId) onMovieTap;
+  const SearchTvShowsTab({super.key, required this.onMovieTap});
 
   @override
   Widget build(BuildContext context) {
@@ -39,31 +40,34 @@ class SearchTvShowsTab extends StatelessWidget {
           itemBuilder: (context, index) {
             final tv = state.tvResults[index];
 
-            return Column(
-              children: [
-                Expanded(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.network(
-                      getPosterUrl(tv.posterPath),
-                      fit: BoxFit.cover,
-                      width: double.infinity,
-                      errorBuilder: (context, error, stackTrace) {
-                        return Container(
-                          color: Colors.transparent,
-                          width: double.infinity,
-                          child: Icon(
-                            Icons.image_not_supported,
-                            color: AppColors.textMuted,
-                          ),
-                        );
-                      },
+            return InkWell(
+              onTap: () => onMovieTap(tv.id),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Image.network(
+                        getPosterUrl(tv.posterPath),
+                        fit: BoxFit.cover,
+                        width: double.infinity,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Container(
+                            color: Colors.transparent,
+                            width: double.infinity,
+                            child: Icon(
+                              Icons.image_not_supported,
+                              color: AppColors.textMuted,
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 4),
-                Text(tv.title, maxLines: 1, overflow: TextOverflow.ellipsis),
-              ],
+                  const SizedBox(height: 4),
+                  Text(tv.title, maxLines: 1, overflow: TextOverflow.ellipsis),
+                ],
+              ),
             );
           },
         );

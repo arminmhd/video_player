@@ -5,12 +5,14 @@ class ProfileSectionTile extends StatelessWidget {
   final IconData icon;
   final String title;
   final VoidCallback? onTap;
+  final Color? color;
 
   const ProfileSectionTile({
     super.key,
     required this.icon,
     required this.title,
     this.onTap,
+    this.color,
   });
 
   @override
@@ -26,15 +28,20 @@ class ProfileSectionTile extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Icon(icon, size: 24.sp),
+            Icon(icon, size: 24.sp, color: color),
 
             SizedBox(width: 16.w),
 
             Expanded(
-              child: Text(title, style: Theme.of(context).textTheme.bodyLarge),
+              child: Text(
+                title,
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyLarge!.copyWith(color: color),
+              ),
             ),
 
-            Icon(Icons.arrow_forward_ios, size: 18.sp),
+            Icon(Icons.arrow_forward_ios, size: 18.sp, color: color),
           ],
         ),
       ),

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movie_stream_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:movie_stream_app/features/auth/presentation/bloc/auth_event.dart';
 import 'package:movie_stream_app/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:movie_stream_app/features/profile/presentation/bloc/profile_state.dart';
+import 'package:movie_stream_app/features/profile/presentation/widgets/logout_button.dart';
 import 'package:movie_stream_app/features/profile/presentation/widgets/profile_header.dart';
 import 'package:movie_stream_app/features/profile/presentation/widgets/profile_section.dart';
 
@@ -31,6 +34,12 @@ class ProfileView extends StatelessWidget {
                     ),
                     SizedBox(height: 25.h),
                     ProfileSection(),
+                    SizedBox(height: 25.h),
+                    LogoutButton(
+                      onLogoutPressed: () {
+                        context.read<AuthBloc>().add(SignOutRequested());
+                      },
+                    ),
                   ],
                 ),
               ),

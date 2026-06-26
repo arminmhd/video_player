@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "430953423969",
-    "project_id": "video-player-7bd9e",
-    "storage_bucket": "video-player-7bd9e.firebasestorage.app"
+    "project_number": "963066524715",
+    "project_id": "chatapplication-5e406",
+    "storage_bucket": "chatapplication-5e406.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:430953423969:android:a0a84b114870fc02c63620",
+        "mobilesdk_app_id": "1:963066524715:android:ff69fdf3de8f18c9cd266e",
         "android_client_info": {
-          "package_name": "com.example.video_player"
+          "package_name": "com.example.movie_stream_app"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBHgRUFLsnhJGCUmco4ToV1k-AWRcLmBFc"
+          "current_key": "AIzaSyA3qfoDW2C_Ydz07xFVOiYDfVQScPP1Sa4"
         }
       ],
       "services": {

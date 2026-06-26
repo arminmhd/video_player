@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:movie_stream_app/features/navigation/presentation/bloc/navigation_bloc.dart';
 import 'package:movie_stream_app/features/navigation/presentation/bloc/navigation_event.dart';
@@ -32,6 +33,9 @@ class SearchPage extends StatelessWidget {
         },
         onBackPressed: () {
           context.read<NavigationBloc>().add(SearchClosed());
+        },
+        onMovieTap: (int id) {
+          context.push('/movie/$id');
         },
       ),
     );
